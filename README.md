@@ -7,7 +7,7 @@ This repository generates realistic **half-hourly residential electricity load p
 - short-term variability and transient spikes,
 - temporal periodicity (day/year cycles),
 - weather-driven demand response.
-![Model Overview](images/model_detail.png)
+![Model Overview](image/model_detail.png)
 ---
 
 ## Method overview (CC-VAE-BiLSTM)
@@ -19,7 +19,7 @@ The proposed model is a **cascaded conditional VAE framework**:
    - weather (e.g., temperature / wind speed / humidity),
    - cyclic time encoding (day-of-year + time-of-day),
    - cluster id.
-![CM-VAE](images/vae1.1.png)
+![CM-VAE](image/vae1.1.png)
 
 2. **IC-VAE (Individual / Medoid→User VAE)**  
    Refines the medoid signal into an individual household profile conditioned on:
@@ -27,7 +27,7 @@ The proposed model is a **cascaded conditional VAE framework**:
    - spike-type sequence (categorical labels),
    - spike-magnitude modifiers,
    - weather + time + cluster.
-![IC-VAE](images/vae2.1.png)
+![IC-VAE](image/vae2.1.png)
 
 3. **Enhancement: Periodic noise injection**  
    Adds high-frequency “texture” back into low-consumption regions using an empirically estimated period distribution.
